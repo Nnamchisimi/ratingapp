@@ -6,7 +6,13 @@ function App() {
   const [rating, setRating] = useState(null);
   const [suggestion, setSuggestion] = useState("");
 
-  const emojis = ["😄", "🙂", "😐", "😕", "😠"];
+  const emojis = [
+    { icon: "😄", color: "#4CAF50" },   // Green
+    { icon: "🙂", color: "#8BC34A" },   // Light green
+    { icon: "😐", color: "#FFEB3B" },   // Yellow
+    { icon: "😕", color: "#FF9800" },   // Orange
+    { icon: "😠", color: "#F44336" },   // Red
+  ];
 
   const handleEmojiClick = (emoji) => {
     setRating(emoji);
@@ -28,7 +34,7 @@ function App() {
   return (
     <div className="app-container">
       <header>
-        <h1>🛠️  Serhan Kombos Otomotiv</h1>
+        <h1>🛠️ Serhan Kombos Otomotiv</h1>
         <p>Rate Your Experience with us. Your feedback helps us improve. We appreciate it!</p>
       </header>
 
@@ -41,9 +47,10 @@ function App() {
                 <button
                   key={index}
                   className="emoji-button"
-                  onClick={() => handleEmojiClick(emoji)}
+                  onClick={() => handleEmojiClick(emoji.icon)}
+                  style={{ backgroundColor: emoji.color }}
                 >
-                  {emoji}
+                  {emoji.icon}
                 </button>
               ))}
             </div>
@@ -78,6 +85,12 @@ function App() {
                 <strong>Your message:</strong> {suggestion}
               </p>
             )}
+            <div className="buttons">
+              <button onClick={handleSubmit}>Submit</button>
+              <button className="back-button" onClick={handleBackButtonClick}>
+                Back
+              </button>
+            </div>
           </div>
         )}
       </div>

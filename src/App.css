@@ -1,3 +1,4 @@
+/* General body styling */
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +7,7 @@ body {
   color: #1f2937;
 }
 
+/* Main container for flex alignment */
 .app-container {
   display: flex;
   flex-direction: column;
@@ -13,6 +15,7 @@ body {
   min-height: 100vh;
 }
 
+/* Header styling */
 header {
   background-color: #0f172a;
   width: 100%;
@@ -22,6 +25,7 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Main rating container for centering the rating section */
 .rating-container {
   display: flex;
   justify-content: center;
@@ -32,10 +36,12 @@ header {
   width: 100%;
 }
 
+/* Styling for the emoji rating section */
 .emoji-rating {
   text-align: center;
 }
 
+/* Feedback step styling */
 .feedback-step {
   text-align: center;
   margin-top: 40px;
@@ -46,6 +52,7 @@ header {
   border-radius: 8px;
 }
 
+/* Styling for the textarea (feedback box) */
 textarea {
   width: 100%;
   height: 100px;
@@ -57,6 +64,7 @@ textarea {
   resize: none;
 }
 
+/* Button styling */
 button {
   margin-top: 20px;
   background-color: #0f172a;
@@ -69,10 +77,12 @@ button {
   transition: background 0.3s ease;
 }
 
+/* Button hover effect */
 button:hover {
   background-color: #1e293b;
 }
 
+/* Back button styling */
 .back-button {
   background-color: #f1f5f9;
   color: #0f172a;
@@ -80,10 +90,12 @@ button:hover {
   border: 1px solid #cbd5e1;
 }
 
+/* Back button hover effect */
 .back-button:hover {
   background-color: #e2e8f0;
 }
 
+/* Thank you message section */
 .thank-you {
   background: white;
   padding: 40px;
@@ -94,27 +106,53 @@ button:hover {
   max-width: 500px;
 }
 
+/* Emoji button options container */
 .emoji-options {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 16px;
   margin-top: 20px;
   flex-wrap: wrap;
 }
 
+/* Styling for each emoji button */
 .emoji-button {
   font-size: 32px;
-  background: none;
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Emoji button hover effect */
 .emoji-button:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
+/* Label below each emoji */
+.emoji-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  margin-top: 4px;
+  text-align: center;
+  line-height: 1;
+  position: absolute;
+  bottom: 6px;
+  width: 100%;
+}
 
+/* Responsive styling for smaller screens */
 @media screen and (max-width: 600px) {
   .emoji-rating {
     font-size: 20px;
