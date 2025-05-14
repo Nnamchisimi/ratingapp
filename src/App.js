@@ -43,8 +43,8 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="rating-container">
-        {step === 1 && (
+      {step === 1 && (
+        <div className="rating-container">
           <div className="emoji-rating">
             <div className="emoji-options">
               {emojis.map((emoji, index) => (
@@ -63,33 +63,31 @@ function App() {
               ))}
             </div>
           </div>
-        )}
+        </div>
+      )}
 
-        {step === 2 && (
-          <div className="feedback-step">
-            <h2>Önerilerinizi lütfen bizimle paylaşiniz</h2>
-            <h3>Please Give Us Suggestions</h3>
-            <textarea
-              placeholder="Tell us how we can do better (optional)..."
-              value={suggestion}
-              onChange={(e) => setSuggestion(e.target.value)}
-            />
-            <div className="buttons">
-              <button onClick={handleSubmit}>Submit</button>
-              <button className="back-button" onClick={handleBackButtonClick}>
-                Back
-              </button>
-            </div>
+      {step === 2 && (
+        <div className="feedback-step">
+          <h2>Önerilerinizi lütfen bizimle paylaşınız</h2>
+          <h3>Please give us suggestions</h3>
+          <textarea
+            placeholder="Daha iyisini nasıl yapabileceğimizi bize söyleyin (isteğe bağlı)..."
+            value={suggestion}
+            onChange={(e) => setSuggestion(e.target.value)}
+          />
+          <div className="buttons">
+            <button onClick={handleSubmit}>Submit</button>
+            <button className="back-button" onClick={handleBackButtonClick}>
+              Back
+            </button>
           </div>
-        )}
-
+        </div>
+      )}
         {step === 3 && (
           <div className="thank-you">
-            <h2>🎉 Thank you!</h2>
-            <p>
-              You rated us:{" "}
-              <img src={rating} alt="selected-rating" className="emoji-img" />
-            </p>
+            <img src="/chck.png" alt="Success checkmark" className="thank-you-image" />
+            <h2>Teşekkür ederim!</h2>
+           
             {suggestion && (
               <p>
                 <strong>Your message:</strong> {suggestion}
@@ -104,8 +102,7 @@ function App() {
               </button>
             </div>
           </div>
-        )}
-      </div>
+      )}
     </div>
   );
 }

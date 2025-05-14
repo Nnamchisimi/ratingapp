@@ -1,5 +1,6 @@
+/* Reset */
 * {
-  box-sizing: border-box; /* Apply border-box to all elements */
+  box-sizing: border-box;
 }
 
 body {
@@ -7,142 +8,62 @@ body {
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #1f2937;
-  overflow-x: hidden;  /* Prevent horizontal scrollbar */
-  height: 100vh;  /* Ensure body takes full height of the screen */
+  overflow-x: hidden;
+  overflow-y: auto; /* ✅ Allow scrolling */
+  height: 100vh;
   width: 100%;
-  overflow-y: hidden;  /* Prevent vertical scrollbar */
-  caret-color: transparent ;
+  caret-color: transparent;
 }
 
-/* Main container for flex alignment */
 .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  background-color: #0f172a; /* Same as header background color */
-  background-image: url('background.jpg'); /* Set the background image here */
+  background-color: #0f172a;
+  background-image: url('background.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-  padding-top: 80px;  /* Adjust space for the header */
+  padding-top: 80px;
   width: 100%;
-  overflow: hidden;  /* Prevent any overflow */
-  caret-color: transparent ;
+  overflow-y: auto; /* ✅ Allow scrolling */
+  caret-color: transparent;
 }
 
-/* Main rating container (on top of background) */
+/* Step 1: Emoji rating container */
 .rating-container {
   display: flex;
   justify-content: center;
   gap: 10px;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;  /* Space between header and rating container */
+  margin-top: 40px;
   width: 100%;
-  z-index: 1;  /* Make sure it stays over the background */
-  position: relative;  /* Ensures it stays on top */
+  z-index: 1;
+  position: relative;
   caret-color: transparent;
- 
-  
+  padding: 20px;
 }
 
-/* Emoji rating section */
 .emoji-rating {
   text-align: center;
 }
-
-/* Feedback step styling */
-.feedback-step {
-  text-align: center;
-  margin-top: 200px;
-  padding: 20px;
-  max-width: 500px;
-  background-color: #f0f0f0; /* Light grey background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  caret-color: transparent ;
-   
+.thank-you-image {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
 }
 
-/* Textarea for feedback */
-textarea {
-  width: 80%;
-  height: 150px;
-  margin-top: 20px;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: 1px #312424;;
-  resize: none;
-  caret-color: auto;
-}
-
-/* General button styles */
-button {
-  margin-top: 20px;
-  background-color: #0f172a;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s ease;
-  width: 200px;
-
-}
-.buttons {
-  display: flex;
-  flex-direction: column; /* Stack children vertically */
-  gap: 10px; /* Space between buttons */
-  margin-top: 20px;
-  align-items: center; /* Optional: align buttons to the left */
-  width : 100%;
-  min-width:200px;
-}
-
-button:hover {
-  background-color: #1e293b;
-}
-
-/* Back button */
-.back-button {
-  background-color: #f1f5f9;
-  color: #0f172a;
-  margin-top: 10px;
-  border: 1px solid #cbd5e1;
-  padding: 12px 24px;
-}
-
-.back-button:hover {
-  background-color: #e2e8f0;
-}
-
-
-
-/* Thank you screen */
-.thank-you {
-  background: white;
-  padding: 40px;
-  margin-top: 60px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 500px;
-}
-
-/* Emoji image container */
 .emoji-options {
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-top: 90px;
+  margin-top: 110px;
   flex-wrap: wrap;
 }
 
-/* Emoji button styling */
 .emoji-button {
   font-size: 32px;
   border: none;
@@ -165,29 +86,166 @@ button:hover {
   transform: scale(1.1);
 }
 
-/* Image inside emoji buttons */
-.emoji-image {
+.emoji-img {
   width: 40px;
   height: 40px;
   object-fit: contain;
 }
 
-.emoji-image.big {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+/* Step 2: Feedback */
+.feedback-step {
+  text-align: center;
+  margin-top: 150px;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  caret-color: transparent;
 }
 
-/* Responsive design */
+textarea {
+  width: 80%;
+  height: 150px;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+  caret-color: auto;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  align-items: center;
+  width: 100%;
+  min-width: 200px;
+}
+
+button {
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  width: 200px;
+}
+
+button:hover {
+  background-color: #1e293b;
+}
+
+.back-button {
+  background-color: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.back-button:hover {
+  background-color: #e2e8f0;
+}
+
+/* Step 3: Thank you */
+.thank-you {
+  text-align: center;
+  margin-top: 250px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  caret-color: transparent;
+  z-index: 2;
+  position: relative;
+}
+
 @media screen and (max-width: 600px) {
+  .app-container {
+    padding-top: 50px;
+  }
+
   .emoji-rating {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+
+  .emoji-options {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 60px;
+  }
+
+  .emoji-button {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    padding: 8px;
+  }
+
+  .emoji-img,
+  .emoji-image {
+    width: 36px;
+    height: 36px;
+  }
+
+  .emoji-image.big {
+    width: 50px;
+    height: 50px;
+  }
+
+  .feedback-step {
+    width: 70%;
+    padding: 16px;
+    margin-top: 100px;
+   
+
+  }
+  .thank-you {
+    width: 90%;
+    padding: 16px;
+    margin-top: 100px;
+  }
+
+  textarea {
+    width: 75%;
+    font-size: 14px;
+    height: 120px;
+  }
+
+  button {
+    width: 50%;
+    font-size: 14px;
+    padding: 10px 20px;
+    align-items: center;
+  }
+
+  .buttons {
+    width: 50%;
+    padding: 0 10px;
+    align-items: center;
+  }
+
+  .thank-you-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  h2, h3 {
     font-size: 20px;
   }
 
-  .feedback-step,
-  .thank-you {
-    width: 90%;
+  p {
+    font-size: 14px;
   }
 }
-
 
