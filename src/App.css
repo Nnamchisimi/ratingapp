@@ -9,7 +9,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #1f2937;
   overflow-x: hidden;
-  overflow-y: auto; /* ✅ Allow scrolling */
+  overflow-y: auto; /*  Allow scrolling */
   height: 100vh;
   width: 100%;
   caret-color: transparent;
@@ -28,7 +28,7 @@ body {
   background-size: cover;
   padding-top: 80px;
   width: 100%;
-  overflow-y: auto; /* ✅ Allow scrolling */
+  overflow-y: auto; /*  Allow scrolling */
   caret-color: transparent;
 }
 
